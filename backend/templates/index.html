@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detector Deepfake</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container text-center mt-5">
+  <h1 class="mb-4">Detector de Imágenes Falsas</h1>
+
+  <form method="POST" enctype="multipart/form-data" class="card p-4 shadow-sm">
+    <div class="mb-3">
+      <input type="file" class="form-control" name="file" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Verificar Imagen</button>
+  </form>
+
+  {% if img_path %}
+    <div class="mt-4">
+      <h3>Resultado: <span class="badge bg-info">{{ result }}</span></h3>
+      <img src="{{ img_path }}" alt="Imagen subida" class="img-fluid mt-3 rounded shadow-sm" style="max-width:400px;">
+    </div>
+  {% endif %}
+</div>
+
+</body>
+</html>
+

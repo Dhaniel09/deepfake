@@ -1,11 +1,11 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  web:
-    build: ./app
-    container_name: deepfake_web
+  flask-app:
+    build: ./backend
+    container_name: deepfake_app
     ports:
       - "5000:5000"
     volumes:
-      - ./shared:/app/uploads
-      - ./app/model:/app/model
+      - ./backend:/app
+
